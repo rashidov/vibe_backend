@@ -1,0 +1,24 @@
+{
+  "name": "vibe_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc src/index.ts",
+    "start:dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+  },
+  "keywords": [],
+  "author": "Rashidov Aidar",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.9.0",
+    "concurrently": "^9.1.2",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}
