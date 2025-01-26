@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc src/index.ts",
-    "start:dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "keywords": [],
   "author": "Rashidov Aidar",
@@ -19,6 +19,7 @@
     "@discordjs/opus": "^0.9.0",
     "concurrently": "^9.1.2",
     "express": "^4.21.2",
+    "opus-decoder": "^0.7.7",
     "socket.io": "^4.8.1"
   }
 }
