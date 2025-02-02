@@ -6,7 +6,7 @@ type User = {
   socket_id: string | null
 }
 
-class Users {
+class UsersEntity {
   users: Map<string, User>
 
   constructor() {
@@ -23,14 +23,14 @@ class Users {
   }
 
   addUsersSocketId(candidate: Omit<User, 'login'>) {
-    if (!this.users.get(candidate.id)) return
+    if (!this.users.has(candidate.id)) return
     this.users.set(candidate.id, { ...this.users.get(candidate.id)!, socket_id: candidate.socket_id })
   }
 
   removeUsersSocketId(id: string) {
-    if (!this.users.get(id)) return
+    if (!this.users.has(id)) return
     this.users.set(id, {...this.users.get(id)!, socket_id: null})
   }
 }
 
-export default Users
+export default UsersEntity
