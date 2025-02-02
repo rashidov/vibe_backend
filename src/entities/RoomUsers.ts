@@ -25,6 +25,7 @@ class RoomUsers {
   }
 
   addRoom(newRoom: Room) {
+    if (this.rooms.has(newRoom.room_id)) return this.getRoom(newRoom.room_id)
     this.rooms.set(newRoom.room_id, newRoom)
     return this.getRoom(newRoom.room_id)
   }

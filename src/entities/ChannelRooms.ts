@@ -25,6 +25,7 @@ class ChannelRooms {
   }
 
   addChannel(newChannel: ChannelRoom) {
+    if (this.channels.has(newChannel.channel_id)) return this.getChannel(newChannel.channel_id)
     this.channels.set(newChannel.channel_id, newChannel)
     return this.getChannel(newChannel.channel_id)
   }
