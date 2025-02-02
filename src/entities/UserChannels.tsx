@@ -20,9 +20,8 @@ class UserChannels {
     return this.users.get(id)
   }
 
-  getUserChannels(id: string): string[] {
-    if (!this.users.has(id)) return []
-    return this.users.get(id)!.channels
+  getUserChannels(id: string) {
+    return this.users.get(id)?.channels || []
   }
 
   getAllUsers() {
@@ -35,8 +34,8 @@ class UserChannels {
     return this.getUser(newUser.user_id)
   }
 
-  addChannel(user: UserChannel) {
-    if (!this.users.has(user.user_id)) return this.addUser(user)
+  addChannels(user: UserChannel) {
+    if (!this.users.has(user.user_id)) return this.addUser(user)!.channels
     const channels = [...this.users.get(user.user_id)!.channels, ...user.channels]
     this.users.set(user.user_id, { user_id: user.user_id, channels })
     return this.getUserChannels(user.user_id)
