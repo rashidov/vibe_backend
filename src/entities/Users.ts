@@ -13,17 +13,17 @@ class UsersEntity {
     this.users = new Map()
   }
 
-  getUser(id: string) {
+  get(id: string) {
     return this.users.get(id)
   }
 
-  addUser(login: string) {
+  add(login: string) {
     const id = uid(4)
     this.users.set(id, { id, login, socket_id: null })
-    return this.getUser(id)
+    return this.get(id)
   }
 
-  removeUser(id: string) {
+  remove(id: string) {
     if (!this.users.has(id)) return false
     this.users.delete(id)
     return true
@@ -32,7 +32,7 @@ class UsersEntity {
   addUsersSocketId(candidate: Omit<User, 'login'>) {
     if (!this.users.has(candidate.id)) return
     this.users.set(candidate.id, { ...this.users.get(candidate.id)!, socket_id: candidate.socket_id })
-    return this.getUser(candidate.id)
+    return this.get(candidate.id)
   }
 
   removeUsersSocketId(id: string) {
