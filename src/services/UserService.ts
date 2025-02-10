@@ -1,7 +1,7 @@
-import { userRepository } from "../entities/Users";
-import { userChannelsRepository } from "../entities/UserChannels";
-import { userRoomsRepository } from "../entities/UserRooms";
-import { UserRoomRelation } from "../types/user";
+import { userRepository } from '../entities/Users'
+import { userChannelsRepository } from '../entities/UserChannels'
+import { userRoomsRepository } from '../entities/UserRooms'
+import { UserRoomRelation } from '../types/user'
 
 class UserService {
   create(login: string) {
@@ -17,5 +17,4 @@ class UserService {
   }
 }
 
-const userService = new UserService()
-export { userService }
+export const userService = new UserService()

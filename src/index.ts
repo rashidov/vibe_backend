@@ -1,23 +1,23 @@
 import express from 'express'
 import http from 'http'
 import { Server, Socket } from 'socket.io'
-import { ACTIONS } from "./lib/actions";
-import { shareRooms } from "./lib/shareRooms";
-import { joinRoom } from "./lib/joinRoom";
-import { leaveRoom } from "./lib/leaveRoom";
-import { relaySDP } from "./lib/relaySDP";
-import { relayIce } from "./lib/relayIce";
-import { router } from "./routes";
+import { ACTIONS } from './lib/actions'
+import { shareRooms } from './lib/shareRooms'
+import { joinRoom } from './lib/joinRoom'
+import { leaveRoom } from './lib/leaveRoom'
+import { relaySDP } from './lib/relaySDP'
+import { relayIce } from './lib/relayIce'
+import { router } from './routes'
 
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
   cors: {
     origin: '*:3000',
-    methods: ["GET", "POST"],
+    methods: ['GET', 'POST'],
     // transports: ['websocket', 'polling'],
     credentials: false,
-  }
+  },
 })
 // const encoder = new OpusEncoder(48000, 2)
 
@@ -46,7 +46,6 @@ io.on('connection', (socket) => {
    * Disconnect from all rooms
    */
   socket.on(ACTIONS.ROOM_LEAVE, leaveRoom(io, socket))
-
 
   /**
    * ...

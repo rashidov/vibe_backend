@@ -1,7 +1,7 @@
-import express from "express";
-import { userService } from "../services/UserService";
-import { roomService } from "../services/RoomService";
-import {User} from "../types/user";
+import express from 'express'
+import { userService } from '../services/UserService'
+import { roomService } from '../services/RoomService'
+import { User } from '../types/user'
 
 class UserController {
   getAll(req: express.Request, res: express.Response) {
@@ -13,15 +13,14 @@ class UserController {
     const user = userService.create(candidate)
     const room = roomService.createRoom({
       maintainer: user.id,
-      name: 'General'
+      name: 'General',
     })
     const rooms = userService.addRoomToUser({
       user_id: user.id,
-      rooms: [room.id]
+      rooms: [room.id],
     })
     return res.status(200).send({ user, rooms })
   }
 }
 
-const userController = new UserController()
-export { userController }
+export const userController = new UserController()
