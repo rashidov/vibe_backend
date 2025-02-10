@@ -42,4 +42,4 @@ class RoomUsersEntity {
   }
 }
 
-export default RoomUsersEntity
+export const roomUsersRepository = new RoomUsersEntity()

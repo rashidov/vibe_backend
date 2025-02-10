@@ -1,19 +1,11 @@
-import RoomsEntity from "../entities/Rooms";
-import RoomUsersEntity from "../entities/RoomUsers";
+import { roomRepository } from "../entities/Rooms";
+import { roomUsersRepository } from "../entities/RoomUsers";
 import { CreateRoom } from "../types/rooms";
 
 class RoomService {
-  roomsRepository: RoomsEntity
-  roomUsersRepository: RoomUsersEntity
-
-  constructor() {
-    this.roomsRepository = new RoomsEntity()
-    this.roomUsersRepository = new RoomUsersEntity()
-  }
-
   createRoom(payload: CreateRoom) {
-    const room = this.roomsRepository.createRoom(payload)
-    const roomUsersRelation = this.roomUsersRepository.addRoom({
+    const room = roomRepository.createRoom(payload)
+    const roomUsersRelation = roomUsersRepository.addRoom({
       room_id: room.id,
       users: payload?.maintainer ? [payload?.maintainer] : []
     })
@@ -21,5 +13,4 @@ class RoomService {
   }
 }
 
-const roomService = new RoomService()
-export { roomService }
+export const roomService = new RoomService()

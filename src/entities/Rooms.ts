@@ -25,4 +25,4 @@ class RoomsEntity {
   }
 }
 
-export default RoomsEntity
+export const roomRepository = new RoomsEntity()

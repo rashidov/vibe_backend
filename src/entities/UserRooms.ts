@@ -1,4 +1,4 @@
-import {UserRoomRelation, UserRoomRelationRemovePayload} from "../types/user";
+import { UserRoomRelation, UserRoomRelationRemovePayload } from "../types/user";
 
 class UserRoomsEntity {
   private users: Map<string, UserRoomRelation>
@@ -44,5 +44,4 @@ class UserRoomsEntity {
   }
 }
 
-const userRoomsRepository = new UserRoomsEntity()
-export { userRoomsRepository }
+export const userRoomsRepository = new UserRoomsEntity()

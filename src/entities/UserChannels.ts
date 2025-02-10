@@ -55,5 +55,4 @@ class UserChannelsEntity {
   }
 }
 
-const userChannelsRepository = new UserChannelsEntity()
-export { userChannelsRepository }
+export const userChannelsRepository = new UserChannelsEntity()
