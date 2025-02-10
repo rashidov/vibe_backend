@@ -2,7 +2,7 @@ import { uid } from 'uid'
 import { User } from '../types/user'
 
 class UsersEntity {
-  users: Map<string, User>
+  private users: Map<string, User>
 
   constructor() {
     this.users = new Map()
@@ -34,7 +34,7 @@ class UsersEntity {
       ...this.users.get(candidate.id)!,
       socket_id: candidate.socket_id,
     })
-    return this.get(candidate.id)
+    return this.get(candidate.id)!
   }
 
   removeUsersSocketId(id: string) {
