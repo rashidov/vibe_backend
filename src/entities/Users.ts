@@ -1,10 +1,5 @@
 import { uid } from "uid";
-
-type User = {
-  id: string
-  login: string
-  socket_id: string | null
-}
+import {User} from "../types/user";
 
 class UsersEntity {
   users: Map<string, User>
@@ -17,10 +12,14 @@ class UsersEntity {
     return this.users.get(id)
   }
 
+  getAll() {
+    return Array.from(this.users).map(([, user]) => user)
+  }
+
   add(login: string) {
     const id = uid(4)
     this.users.set(id, { id, login, socket_id: null })
-    return this.get(id)
+    return this.get(id)!
   }
 
   remove(id: string) {
@@ -41,5 +40,5 @@ class UsersEntity {
     return true
   }
 }
-
-export default UsersEntity
+const userRepository = new UsersEntity()
+export { userRepository }

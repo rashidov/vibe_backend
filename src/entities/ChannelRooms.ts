@@ -9,7 +9,7 @@ type ChannelRoom = {
   rooms: string[]
 }
 
-class ChannelRooms {
+class ChannelRoomsEntity {
   channels: Map<ChannelRoom['channel_id'], ChannelRoom>
 
   constructor() {
@@ -53,4 +53,4 @@ class ChannelRooms {
   }
 }
 
-export default ChannelRooms
+export default ChannelRoomsEntity

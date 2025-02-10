@@ -1,10 +1,5 @@
 import {uid} from "uid";
-
-type Room = {
-  maintainer?: string
-  name: string
-  id: string
-}
+import {CreateRoom, Room} from "../types/rooms";
 
 class RoomsEntity {
   rooms: Map<string, Room>
@@ -17,10 +12,10 @@ class RoomsEntity {
     return this.rooms.get(id)
   }
 
-  createRoom(room: Omit<Room, 'id'>) {
+  createRoom(room: CreateRoom) {
     const id = uid(6)
     this.rooms.set(id, { id, ...room })
-    return this.getRoom(id)
+    return this.getRoom(id)!
   }
 
   removeRoom(id: string) {
