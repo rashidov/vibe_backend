@@ -25,5 +25,4 @@ class ChannelsEntity {
   }
 }
 
-const channelRepository = new ChannelsEntity()
-export { channelRepository }
+export const channelRepository = new ChannelsEntity()

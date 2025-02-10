@@ -44,5 +44,4 @@ class ChannelRoomsEntity {
   }
 }
 
-const channelRoomsRepository = new ChannelRoomsEntity()
-export { channelRoomsRepository }
+export const channelRoomsRepository = new ChannelRoomsEntity()

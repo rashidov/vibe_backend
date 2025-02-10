@@ -13,3 +13,11 @@ export type UserRoomRelationRemovePayload = {
   room_id: string
 }
 
+export type UserChannelRelation = {
+  user_id: string
+  channels: string[]
+}
+export type UserChannelRelationRemovePayload = {
+  user_id: string
+  channel_id: string
+}

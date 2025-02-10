@@ -1,4 +1,4 @@
-import {RoomUsersRelation, RoomUsersRemovePayload} from "../types/rooms";
+import { RoomUsersRelation, RoomUsersRemovePayload } from "../types/rooms";
 
 class RoomUsersEntity {
   rooms: Map<RoomUsersRelation['room_id'], RoomUsersRelation>

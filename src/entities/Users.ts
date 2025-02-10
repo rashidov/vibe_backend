@@ -40,5 +40,4 @@ class UsersEntity {
     return true
   }
 }
-const userRepository = new UsersEntity()
-export { userRepository }
+export const userRepository = new UsersEntity()
