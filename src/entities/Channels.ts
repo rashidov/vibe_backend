@@ -1,9 +1,5 @@
-import {uid} from "uid";
-
-type Channel = {
-  id: string
-  maintainer: string
-}
+import { uid } from "uid";
+import { Channel } from "../types/channel";
 
 class ChannelsEntity {
   channels: Map<string, Channel>
@@ -29,4 +25,5 @@ class ChannelsEntity {
   }
 }
 
-export default ChannelsEntity
+const channelRepository = new ChannelsEntity()
+export { channelRepository }

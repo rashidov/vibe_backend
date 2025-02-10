@@ -1,9 +1,9 @@
-import Channels from "../entities/Channels";
+import { channelRepository } from "../entities/Channels";
+import { channelRoomsRepository } from '../entities/ChannelRooms'
 
 class ChannelService {
-  channelRepository: Channels
 
-  constructor(channelRepository: Channels) {
-    this.channelRepository = channelRepository
-  }
 }
+
+const channelService = new ChannelService()
+export { channelService }
