@@ -5,7 +5,7 @@ type Channel = {
   maintainer: string
 }
 
-class Channels {
+class ChannelsEntity {
   channels: Map<string, Channel>
 
   constructor() {
@@ -29,4 +29,4 @@ class Channels {
   }
 }
 
-export default Channels
+export default ChannelsEntity

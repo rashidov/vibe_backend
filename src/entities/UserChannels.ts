@@ -9,7 +9,7 @@ type UserChannel = {
   channels: string[]
 }
 
-class UserChannels {
+class UserChannelsEntity {
   users: Map<string, UserChannel>
 
   constructor() {
@@ -55,4 +55,5 @@ class UserChannels {
   }
 }
 
-export default UserChannels
+const userChannelsRepository = new UserChannelsEntity()
+export { userChannelsRepository }

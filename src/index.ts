@@ -4,9 +4,10 @@ import { Server, Socket } from 'socket.io'
 import { ACTIONS } from "./lib/actions";
 import { shareRooms } from "./lib/shareRooms";
 import { joinRoom } from "./lib/joinRoom";
-import {leaveRoom} from "./lib/leaveRoom";
-import {relaySDP} from "./lib/relaySDP";
-import {relayIce} from "./lib/relayIce";
+import { leaveRoom } from "./lib/leaveRoom";
+import { relaySDP } from "./lib/relaySDP";
+import { relayIce } from "./lib/relayIce";
+import { router } from "./routes";
 
 const app = express()
 const server = http.createServer(app)
@@ -24,6 +25,7 @@ const PORT = 3001
 
 // let clients: Socket[] = []
 
+app.use('/api', router)
 
 io.on('connection', (socket) => {
   console.log('client connected ->', socket.id)
