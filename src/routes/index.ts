@@ -1,7 +1,7 @@
-import express from "express";
-import { userRoutes } from "./user";
-import { channelRoutes } from "./channel";
-import { roomRouter } from "./room";
+import express from 'express'
+import { userRoutes } from './user'
+import { channelRoutes } from './channel'
+import { roomRouter } from './room'
 
 const router = express.Router()
 

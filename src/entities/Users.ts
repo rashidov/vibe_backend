@@ -1,5 +1,5 @@
-import { uid } from "uid";
-import {User} from "../types/user";
+import { uid } from 'uid'
+import { User } from '../types/user'
 
 class UsersEntity {
   users: Map<string, User>
@@ -30,13 +30,16 @@ class UsersEntity {
 
   addUsersSocketId(candidate: Omit<User, 'login'>) {
     if (!this.users.has(candidate.id)) return
-    this.users.set(candidate.id, { ...this.users.get(candidate.id)!, socket_id: candidate.socket_id })
+    this.users.set(candidate.id, {
+      ...this.users.get(candidate.id)!,
+      socket_id: candidate.socket_id,
+    })
     return this.get(candidate.id)
   }
 
   removeUsersSocketId(id: string) {
     if (!this.users.has(id)) return false
-    this.users.set(id, {...this.users.get(id)!, socket_id: null})
+    this.users.set(id, { ...this.users.get(id)!, socket_id: null })
     return true
   }
 }

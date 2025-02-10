@@ -1,4 +1,4 @@
-import { RoomUsersRelation, RoomUsersRemovePayload } from "../types/rooms";
+import { RoomUsersRelation, RoomUsersRemovePayload } from '../types/rooms'
 
 class RoomUsersEntity {
   rooms: Map<RoomUsersRelation['room_id'], RoomUsersRelation>
@@ -12,7 +12,7 @@ class RoomUsersEntity {
   }
 
   getAllRooms() {
-    return Array.from(this.rooms).map(([,room]) => room)
+    return Array.from(this.rooms).map(([, room]) => room)
   }
 
   addRoom(newRoom: RoomUsersRelation) {
@@ -30,7 +30,9 @@ class RoomUsersEntity {
 
   removeUser(payload: RoomUsersRemovePayload) {
     if (!this.rooms.has(payload.room_id)) return undefined
-    const users = this.rooms.get(payload.room_id)!.users.filter((userId) => userId !== payload.user_id)
+    const users = this.rooms
+      .get(payload.room_id)!
+      .users.filter((userId) => userId !== payload.user_id)
     this.rooms.set(payload.room_id, { room_id: payload.room_id, users })
     return this.getRoom(payload.room_id)
   }

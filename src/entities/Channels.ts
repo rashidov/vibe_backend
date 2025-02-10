@@ -1,5 +1,5 @@
-import { uid } from "uid";
-import { Channel } from "../types/channel";
+import { uid } from 'uid'
+import { Channel } from '../types/channel'
 
 class ChannelsEntity {
   channels: Map<string, Channel>

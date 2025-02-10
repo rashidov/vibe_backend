@@ -1,5 +1,5 @@
-import { uid } from "uid";
-import { CreateRoom, Room } from "../types/rooms";
+import { uid } from 'uid'
+import { CreateRoom, Room } from '../types/rooms'
 
 class RoomsEntity {
   rooms: Map<string, Room>

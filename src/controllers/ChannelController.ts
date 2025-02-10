@@ -4,5 +4,4 @@ class ChannelController {
   }
 }
 
-const channelController = new ChannelController()
-export { channelController }
+export const channelController = new ChannelController()

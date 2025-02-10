@@ -1,5 +1,5 @@
-import express from "express";
-import {channelController} from "../controllers/ChannelController";
+import express from 'express'
+import { channelController } from '../controllers/ChannelController'
 
 const channelRoutes = express.Router()
 

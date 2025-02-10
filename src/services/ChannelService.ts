@@ -1,9 +1,6 @@
-import { channelRepository } from "../entities/Channels";
+import { channelRepository } from '../entities/Channels'
 import { channelRoomsRepository } from '../entities/ChannelRooms'
 
-class ChannelService {
+class ChannelService {}
 
-}
-
-const channelService = new ChannelService()
-export { channelService }
+export const channelService = new ChannelService()

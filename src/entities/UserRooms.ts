@@ -1,4 +1,4 @@
-import { UserRoomRelation, UserRoomRelationRemovePayload } from "../types/user";
+import { UserRoomRelation, UserRoomRelationRemovePayload } from '../types/user'
 
 class UserRoomsEntity {
   private users: Map<string, UserRoomRelation>
@@ -34,8 +34,13 @@ class UserRoomsEntity {
 
   removeRoom(payload: UserRoomRelationRemovePayload) {
     if (!this.users.has(payload.user_id)) return []
-    const rooms = this.getUserRooms(payload.room_id).filter((roomId) => roomId !== payload.room_id)
-    this.users.set(payload.user_id, { ...this.getUser(payload.user_id)!, rooms })
+    const rooms = this.getUserRooms(payload.room_id).filter(
+      (roomId) => roomId !== payload.room_id,
+    )
+    this.users.set(payload.user_id, {
+      ...this.getUser(payload.user_id)!,
+      rooms,
+    })
     return this.getUserRooms(payload.room_id)
   }
 

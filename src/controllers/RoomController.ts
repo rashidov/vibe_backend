@@ -1,4 +1,4 @@
-import express from "express";
+import express from 'express'
 
 class RoomController {
   getAll(req: express.Request, res: express.Response) {
@@ -7,4 +7,3 @@ class RoomController {
 }
 
 export const roomController = new RoomController()
-
